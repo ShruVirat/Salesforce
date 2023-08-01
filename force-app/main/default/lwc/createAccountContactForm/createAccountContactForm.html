@@ -1,0 +1,20 @@
+<template>
+    <lightning-card title="Create Account and Contact" icon-name="standard:account">
+        <div class="slds-p-around_medium">
+            <lightning-input label="Account Name" value={accountName} onchange={handleAccountNameChange}></lightning-input>
+            <lightning-input label="Contact First Name" value={contactFirstName} onchange={handleContactFirstNameChange}></lightning-input>
+            <lightning-input label="Contact Last Name" value={contactLastName} onchange={handleContactLastNameChange}></lightning-input>
+            <lightning-input label="Contact Email" type="email" value={contactEmail} onchange={handleContactEmailChange}></lightning-input>
+            <lightning-input label="Account Website" value={accountWebsite} onchange={handleAccountWebsiteChange}></lightning-input>
+            <lightning-input label="Contact Phone Number" type="tel" value={contactPhoneNumber} onchange={handleContactPhoneNumberChange}></lightning-input>
+            <input type="file" onchange={handleFileChange} />
+        </div>
+        <div class="slds-m-around_medium">
+            <lightning-button-group>
+                <lightning-button label="Save" variant="brand" onclick={handleSave}></lightning-button>
+                <lightning-button label="Save and New" variant="brand" onclick={handleSaveAndNew}></lightning-button>
+                <lightning-button label="Cancel" variant="neutral" onclick={handleCancel}></lightning-button>
+            </lightning-button-group>
+        </div>
+    </lightning-card>
+</template>
