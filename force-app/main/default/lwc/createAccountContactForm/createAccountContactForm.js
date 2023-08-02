@@ -60,7 +60,8 @@ export default class CreateAccountContactForm extends LightningElement {
                 return createRecord({ apiName: 'Contact', fields });
             })
             .then((contact) => {
-                this.navigateToContactPage(contact.id);
+                this.showToast('Success', 'Record saved successfully', 'success');
+                this.navigateToContactPage(Contact.id);
             })
             .catch((error) => {
                 this.showToast('Error creating record', error.body.message, 'error');
@@ -119,6 +120,16 @@ export default class CreateAccountContactForm extends LightningElement {
             variant: variant
         });
         this.dispatchEvent(event);
+    }
+
+    clearFormFields() {
+        this.accountName = '';
+        this.contactFirstName = '';
+        this.contactLastName = '';
+        this.contactEmail = '';
+        this.accountWebsite = '';
+        this.contactPhoneNumber = '';
+        this.file = null;
     }
 }
 
